@@ -1,5 +1,9 @@
 import time
 
+def solve_bnb(n, adj, edges, cutoff, seed):
+    """Added this to make Shreya's mvc.py work with my bnb code"""
+    return branch_and_bound(adj, n, cutoff)
+
 def branch_and_bound(adj, n, cutoff):
     start = time.time()
 
