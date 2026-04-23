@@ -1,4 +1,2 @@
-*.sol
-*.trace
 __pycache__/
 *.txt
