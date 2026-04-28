@@ -58,7 +58,10 @@ python mvc.py -inst <instance> -alg [BnB|Approx|LS1|LS2] -time <cutoff> -seed <r
 
 ## Output Files
 
-Each run produces two files written to the same directory as the input instance.
+Each run writes its output files to the current working directory (i.e.,
+the directory from which `python3 mvc.py ...` is executed). For BnB,
+LS1, and LS2 this includes both a `.sol` and a `.trace` file; for
+Approx, only a `.sol` file is produced.
 
 ### Solution file (`.sol`)
 
@@ -73,6 +76,10 @@ Named `<instance>_<alg>_<cutoff>.sol` for deterministic algorithms, or
 Line 1 is the size of the vertex cover. Line 2 is the space-separated list of vertex indices.
 
 ### Trace file (`.trace`)
+
+*Produced for `BnB`, `LS1`, and `LS2`. Not produced for `Approx`, since
+the approximation algorithm has no anytime improvements to record (per
+handout §7.3).*
 
 Named `<instance>_<alg>_<cutoff>.trace` or `<instance>_<alg>_<cutoff>_<seed>.trace`.
 
